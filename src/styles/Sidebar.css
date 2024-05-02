@@ -1,0 +1,27 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 117px;
+    height: 1080px;
+    background: #020203;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 256px;
+    padding-bottom: 59px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.sidebar p {
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}

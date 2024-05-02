@@ -115,7 +115,7 @@ export const USER_ACTIVITY = [
 ]
 
 
-const USER_AVERAGE_SESSIONS = [
+export const USER_AVERAGE_SESSIONS = [
     {
         userId: 12,
         sessions: [
