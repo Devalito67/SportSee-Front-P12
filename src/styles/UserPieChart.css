@@ -1,0 +1,42 @@
+.userPieChart {
+    display: flex;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    width: 258px;
+    height: 263px;
+    flex-shrink: 0;
+    stroke: white;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.userPieChart h3 {
+    position: absolute;
+    top: 24px;
+    left: 30px;
+}
+
+.userScore-container {
+    position: absolute;
+    top: auto;
+    left: auto;
+    text-align: center;
+}
+
+.userScore-container .userScore-value {
+    color: #282D30;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.userScore-container p {
+    color: #74798C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}

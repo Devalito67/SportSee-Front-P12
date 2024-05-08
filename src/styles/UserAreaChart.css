@@ -1,0 +1,23 @@
+.userAreaChart {
+    display: flex;
+    border-radius: 5px;
+    background-color: #ff0000;
+    width: 258px;
+    height: 263px;
+    flex-shrink: 0;
+    stroke: white;
+    position: relative;
+}
+
+.userAreaChart h3 {
+    position: absolute;
+    top: 29px;
+    left: 34px;
+    color: #FFF;
+    opacity: 0.504;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    width: 147px;
+}

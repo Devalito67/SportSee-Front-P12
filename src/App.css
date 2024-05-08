@@ -28,4 +28,5 @@ a, li {
 
 .main-container {
     display: flex;
+    height: 100%;
 }

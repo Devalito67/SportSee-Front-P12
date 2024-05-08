@@ -1,0 +1,24 @@
+.userBarChart {
+    display: flex;
+    width: 835px;
+    height: 320px;
+    flex-shrink: 0;
+    position: relative;
+    background-color: #fbfbfb;
+    justify-content: center;
+}
+
+.userBarChart h3 {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    color: #20253A;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.userBarChart .recharts-wrapper {
+    height: 320px !important;
+}

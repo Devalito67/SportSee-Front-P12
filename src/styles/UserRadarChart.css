@@ -1,0 +1,14 @@
+.userRadarChart {
+    display: flex;
+    border-radius: 5px;
+    background-color: #282d30;
+    width: 258px;
+    height: 263px;
+    flex-shrink: 0;
+    stroke: white;
+}
+
+.userRadarChart .a text{
+    /*transform: translateY(20px);*/
+    font-size: 12px;
+}

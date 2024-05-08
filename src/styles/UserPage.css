@@ -1,6 +1,9 @@
 .userDataContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 68px;
+    margin-left: 107px;
+    row-gap: 78px;
 }
 
 .userDataInfos {
