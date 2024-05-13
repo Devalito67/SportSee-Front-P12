@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# SportSee Projet 12 Openclassrooms
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Prérequis
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- NodeJS
+- npm
+- yarn
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation et exécution du projet
 
-- Configure the top-level `parserOptions` property like this:
+### Back-end
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. **Cloner le repository du back-end :**
+   git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Installer les dépendances :**
+cd P9-front-end-dashboard
+npm install
+
+3. **Lancer le back-end sur le port 3000 (port par défaut) :**
+npm run dev
+
+### Front-end
+
+1. **Cloner le repository du front-end :**
+git clone https://github.com/Devalito67/SportSee-Front-P12.git
+
+2. **Installer les dépendances :**
+cd SportSee-Front-P12
+npm install
+
+3. **Lancer le front-end sur le port 3001 :**
+npm start
+
