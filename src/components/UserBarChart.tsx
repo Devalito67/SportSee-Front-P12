@@ -3,29 +3,25 @@ import { USER_ACTIVITY } from "../_mocks_/datas_mocked.js";
 import dataFetch from "./dataFetch";
 import "../styles/UserBarChart.css";
 import { useState, useEffect } from "react";
+import User from "../utils/User.jsx";
 
 export default function UserBarChart({ userId }) {
     const apiUrl = 'http://localhost:3000/user/' + userId + '/activity';
-    const [sessions, setSessions] = useState([]);
+    const [userData, setUserData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fetchedData = await dataFetch(userId, apiUrl, USER_ACTIVITY);
-                console.log(fetchedData);
-                const mappedSessions = await fetchedData.data.sessions.map((item) => ({
-                    kilogram: item.kilogram,
-                    calories: item.calories,
-                    day: item.day.split("-")[2].trim().replace(/^0/, ''),
-                }));
-                setSessions(mappedSessions);
+                const userDataFetch = await dataFetch(userId, apiUrl, USER_ACTIVITY);
+                const user= new User(userDataFetch);
+                setUserData(user.getActivityData());
             } catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [userId, apiUrl]);
 
     const CustomBar = ({ fill, x, y, width, height, barRadius }: {
         fill: string;
@@ -53,7 +49,7 @@ export default function UserBarChart({ userId }) {
         <BarChart
             width={800}
             height={250}
-            data={sessions}
+            data={userData}
             margin={{
                 top: 5,
                 right: 30,

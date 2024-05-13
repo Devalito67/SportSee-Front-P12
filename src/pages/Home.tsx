@@ -6,12 +6,12 @@ export default function Home() {
     return <div className="home">
         <Link to="/userPage/12">
             <button >
-                Cécilia
+                Karl
             </button>
         </Link>
         <Link to="/userPage/18">
             <button>
-                Karl
+                Cécilia
             </button>
         </Link>
     </div>

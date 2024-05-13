@@ -3,43 +3,39 @@ import { USER_MAIN_DATA } from "../_mocks_/datas_mocked.js";
 import dataFetch from "./dataFetch.js";
 import "../styles/UserPieChart.css";
 import { useState, useEffect } from "react";
+import User from "../utils/User.jsx";
 
 export default function UserPieChart({ userId }) {
     const apiUrl = 'http://localhost:3000/user/' + userId;
-    const [score, setScore] = useState();
+    const [userData, setUserData] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fetchedData = await dataFetch(userId, apiUrl, USER_MAIN_DATA);
-
-                const mappedScore = [
-                    { name: "userScore", value: (fetchedData.data.score * 100) || (fetchedData.data.todayScore * 100), fill: "#ff0000"},
-                    { name: "globalScore", value: (100 - fetchedData.data.score * 100)  || (100 - fetchedData.data.todayScore * 100), fill: "#fbfbfb" }
-                ];
-
-                setScore(mappedScore);
+                const userDataFetch = await dataFetch(userId, apiUrl, USER_MAIN_DATA);
+                const user = new User(userDataFetch)
+                console.log("user", user.getScore())
+                setUserData(user.getScore());
             } catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [userId, apiUrl]);
 
-    console.log("score", score)
 
     return <div className="userPieChart">
         <h3>Score</h3>
         <div className="userScore-container">
-          <p className="userScore-value">{score ? `${score[0].value}%` : null}</p>
-          <p>de votre objectif</p>  
+            <p className="userScore-value">{userData ? `${userData[0].value}%` : null}</p>
+            <p>de votre objectif</p>
         </div>
         <PieChart width={218} height={218}>
-            <Pie data={score} cx="50%" cy="50%" innerRadius={75} outerRadius={85} paddingAngle={0} dataKey="value" cornerRadius={5} startAngle={90} endAngle={450}>
-                {score?.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.fill} />
-                    ))
+            <Pie data={userData} cx="50%" cy="50%" innerRadius={75} outerRadius={85} paddingAngle={0} dataKey="value" cornerRadius={5} startAngle={90} endAngle={450}>
+                {userData?.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                ))
                 }
             </Pie>
 
