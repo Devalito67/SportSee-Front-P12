@@ -10,6 +10,6 @@ export default function Header() {
             <Link to="/profil">Profil</Link>
             <Link to="/settings">Réglage</Link>
             <Link to="/community">Communauté</Link>
-            </nav>
+        </nav>
     </div>
 }

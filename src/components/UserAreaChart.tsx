@@ -1,5 +1,5 @@
 import { AreaChart, Tooltip, XAxis, YAxis, CartesianGrid, Area } from "recharts";
-import { USER_AVERAGE_SESSIONS } from "../_mocks_/datas_mocked.js";
+import { USER_AVERAGE_SESSIONS } from "src/_mocks_/datas_mocked.js";
 import dataFetch from "./dataFetch.js";
 import "../styles/UserAreaChart.css";
 import { useState, useEffect } from "react";
@@ -17,21 +17,26 @@ const CustomTooltip = ({ ...otherProps }) => {
     );
 };
 
-export default function UserAreaChart({ userId }) {
+interface averageSessionType {
+    day: number;
+    sessionLength: number;
+}
+
+export default function UserAreaChart({ userId }: { userId: string }) {
     const apiUrl = 'http://localhost:3000/user/' + userId + '/average-sessions';
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState<averageSessionType[]>([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const userDataFetch = await dataFetch(userId, apiUrl, USER_AVERAGE_SESSIONS);
-                const user = new User(userDataFetch); 
+                const user = new User(userDataFetch);
                 setUserData(user.getAverageSessionLengthData());
             } catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
             }
         };
         fetchData();
-    }, [apiUrl, userId]);
+    },[userId,apiUrl]);
 
     return <div className="userAreaChart">
         <h3>Durée moyenne des sessions</h3>

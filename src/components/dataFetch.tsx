@@ -1,4 +1,6 @@
-export default async function dataFetch(userId: string, apiUrl: string, dataUsers: any[]) {
+import { UserData, Activity, AverageSessions, Performance } from 'src/_mocks_/datas_mocked.js';
+
+export default async function dataFetch(userId: string, apiUrl: string, dataUsers: (UserData | Activity | AverageSessions | Performance)[]) {
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {

@@ -8,7 +8,6 @@
     stroke: white;
 }
 
-.userRadarChart .a text{
-    /*transform: translateY(20px);*/
+.userRadarChart .a text {
     font-size: 12px;
 }

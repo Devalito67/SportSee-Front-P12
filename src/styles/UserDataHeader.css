@@ -1,9 +1,9 @@
 .userDataHeader-container {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.userDataHeader-container h2{
+.userDataHeader-container h2 {
     color: #000;
     font-size: 48px;
     font-style: normal;
@@ -12,6 +12,6 @@ flex-direction: column;
     margin-bottom: 41px;
 }
 
-.userDataHeader-container h2 .userName{
+.userDataHeader-container h2 .userName {
     color: #ff0101;
 }

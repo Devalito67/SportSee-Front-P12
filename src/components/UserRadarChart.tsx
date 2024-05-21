@@ -1,14 +1,18 @@
 import { RadarChart, PolarGrid, Radar, PolarAngleAxis } from "recharts";
-import { USER_PERFORMANCE } from "../_mocks_/datas_mocked.js";
+import { USER_PERFORMANCE } from "src/_mocks_/datas_mocked.js";
 import "../styles/UserRadarChart.css"
 import dataFetch from "./dataFetch";
 import { useEffect, useState } from "react";
 import User from "../utils/User.jsx";
 
-export default function UserRadarChart({ userId }) {
-    const apiUrl = 'http://localhost:3000/user/' + userId + '/performance';
-    const [userData, setUserData] = useState(null);
+interface PerformanceType {
+    kind: string;
+    value: number;
+}
 
+export default function UserRadarChart({ userId }: { userId: string }) {
+    const apiUrl = 'http://localhost:3000/user/' + userId + '/performance';
+    const [userData, setUserData] = useState<PerformanceType[]>([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,7 +24,7 @@ export default function UserRadarChart({ userId }) {
             }
         };
         fetchData();
-    }, [apiUrl, userId]);
+    },[userId,apiUrl]);
 
     return <div className="userRadarChart">
         <RadarChart outerRadius={90} width={258} height={263} data={userData} >

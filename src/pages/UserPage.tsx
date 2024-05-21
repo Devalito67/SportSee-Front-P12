@@ -8,7 +8,11 @@ import UserDataHeader from "../components/UserDataHeader";
 import "../styles/UserPage.css";
 
 export default function UserPage() {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
+    if (!id) {
+        return ;
+    }
+
     return <div className="userDataContainer">
         <UserDataHeader userId={id} />
         <div className="userDataInfos">

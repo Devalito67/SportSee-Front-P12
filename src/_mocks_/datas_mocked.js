@@ -261,4 +261,3 @@ export const USER_PERFORMANCE = [
         ]
     }
 ]
-
