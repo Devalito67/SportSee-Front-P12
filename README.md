@@ -22,8 +22,7 @@ cd P9-front-end-dashboard
 npm install
 
 3. **Lancer le back-end sur le port 3000 (port par défaut) :**
-npm run dev
-
+npm start
 ### Front-end
 
 1. **Cloner le repository du front-end :**
@@ -33,6 +32,6 @@ git clone https://github.com/Devalito67/SportSee-Front-P12.git
 cd SportSee-Front-P12
 npm install
 
-3. **Lancer le front-end sur le port 3001 :**
-npm start
+3. **Lancer le front-end sur le port 5173 :**
+npm run dev
 
