@@ -9,7 +9,7 @@ export default async function dataFetch(userId: string, apiUrl: string, dataUser
     const userData = await response.json();
     return userData;
   } catch (error) {
-    console.error('Erreur:', error);
+    console.error('Erreur: Les données sont des données de substitution!!!');
     const userData = dataUsers.find((user) => user.userId === parseInt(userId) || user.id === parseInt(userId));
     return { data: userData };
   }
